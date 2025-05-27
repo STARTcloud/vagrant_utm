@@ -29,6 +29,7 @@ module VagrantPlugins
     module Util
       lib_path = Pathname.new(File.expand_path("vagrant_utm/util", __dir__))
       autoload :CompileForwardedPorts, lib_path.join("compile_forwarded_ports")
+      autoload :CompileNetworks, lib_path.join("compile_networks")
     end
 
     # This returns the path to the source of this plugin.

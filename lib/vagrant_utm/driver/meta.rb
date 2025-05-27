@@ -92,6 +92,7 @@ module VagrantPlugins
 
         def_delegators :@driver,
                        :check_qemu_guest_agent,
+                       :clear_additional_network_adapters,
                        :clear_forwarded_ports,
                        :clear_shared_folders,
                        :create_snapshot,
@@ -108,6 +109,7 @@ module VagrantPlugins
                        :read_forwarded_ports,
                        :read_guest_ip,
                        :read_network_interfaces,
+                       :read_qemu_network_adapters,
                        :read_state,
                        :read_used_ports,
                        :read_vms,
@@ -119,7 +121,9 @@ module VagrantPlugins
                        :start,
                        :start_disposable,
                        :suspend,
-                       :vm_exists?
+                       :vm_exists?,
+                       :add_network_adapter,
+                       :ensure_network_adapter_exists
 
         protected
 

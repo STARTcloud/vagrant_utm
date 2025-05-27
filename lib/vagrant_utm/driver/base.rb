@@ -108,6 +108,19 @@ module VagrantPlugins
         # @param [String] mac MAC address without any spaces/hyphens.
         def set_mac_address(mac); end # rubocop:disable Naming/AccessorMethodName
 
+        # Adds a network adapter to the virtual machine.
+        #
+        # @param [Integer] adapter_index The adapter index (0-based)
+        # @param [Symbol] network_type The type of network (:host_only, :bridged, :internal)
+        # @param [Hash] network_config Network configuration options
+        def add_network_adapter(adapter_index, network_type, network_config); end
+
+        # Ensures a network adapter exists at the specified index.
+        #
+        # @param [Integer] adapter_index The adapter index (0-based)
+        # @param [Symbol] network_type The type of network (:shared, :emulated, :host_only, :bridged)
+        def ensure_network_adapter_exists(adapter_index, network_type); end
+
         # Execute the 'list' command and returns the list of machines.
         # @return [ListResult] The list of machines.
         def list; end

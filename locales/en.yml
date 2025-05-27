@@ -137,6 +137,9 @@ en:
             additions are required for forwarded ports, shared folders, host only
             networking, and more. If SSH fails on this machine, please install
             the guest additions and retry
+        forward_ports:
+          non_emulated: |-
+            Adapter %{adapter} is not an emulated VLAN interface. Port forwarding is only supported on emulated VLAN interfaces.
         export:
           manual_exporting: |-
             UTM 'Share' feature in UI will Export the virtual machine and all its data.
@@ -159,5 +162,10 @@ en:
         snapshot:
           list: |-
             Listing snapshots for UTM virtual machine...
-        
-            
+        configure_networks:
+          configuring: |-
+            Configuring network adapters...
+          ensuring_base_adapters: |-
+            Ensuring base network adapters exist...
+          configuring_adapter: |-
+            Adapter %{adapter}: %{type}
